@@ -21,5 +21,21 @@ router.route("/players").get( async(request, response) => {
 
 } );
 
+// api to find player
+// /api/search/userInput
+
+router.route('/search').get( async(request, response) => {
+
+     let userQuery = request.query.searchQuery;
+
+     console.log(userQuery);
+    let playerList = await apis.getPlayer(userQuery);
+
+    // convert object to json and send as repsonse
+    let playerListJSON = JSON.stringify(playerList);
+
+    response.status(200).send(playerListJSON);
+});
+
 
 module.exports = router;
