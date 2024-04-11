@@ -27,15 +27,12 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded( {extended: true} ));
 app.use(express.json());
 
-// getting all routes filed
 
 
+// routes for api
+const apiRoutes = require('./routes/api/route');
 
-
-
-
-// use the  menu/route.js file to handle
-
+app.use('/api', apiRoutes);
 
 
 
