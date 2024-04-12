@@ -12,7 +12,6 @@ const app = express();
 // set port for the server
 const port = process.env.PORT || "8888";
 
-
 // set path for views
 app.set("views", path.join(__dirname, "views"));
 
@@ -33,7 +32,6 @@ app.use(express.json());
 const apiRoutes = require('./routes/api/route');
 
 app.use('/api', apiRoutes);
-
 
 
 // start app to listen for request
