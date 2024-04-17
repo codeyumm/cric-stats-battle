@@ -5,13 +5,14 @@ const { MongoClient } = require("mongodb");
 // Functions for different API's
 
 // function to get all the players
-async function getAllPlayers(){
+async function getAllPlayers(limit){
+
     
     // connect to database
     let db = await connection();
 
     // find top 50 players from players collection
-    let result = await db.collection('players').find( {} ).limit(50);
+    let result = await db.collection('players').find( {} ).limit(parseInt(limit));
 
     // convert db response to array and store it
     let response = await result.toArray();

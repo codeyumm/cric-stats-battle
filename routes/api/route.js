@@ -11,8 +11,10 @@ router.route("/players").get( async(request, response) => {
     // for api to get all players
     // /api/players -> retuns all players data json
 
+    let limit = request.query.limit;
 
-    let players = await apis.getAllPlayers();
+
+    let players = await apis.getAllPlayers(limit);
         
     // convert object to json
     let playersJSON = JSON.stringify(players);
