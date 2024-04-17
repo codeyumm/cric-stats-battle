@@ -10,8 +10,8 @@ async function getAllPlayers(){
     // connect to database
     let db = await connection();
 
-    // find all players from players collection
-    let result = await db.collection('players').find( {} );
+    // find top 50 players from players collection
+    let result = await db.collection('players').find( {} ).limit(50);
 
     // convert db response to array and store it
     let response = await result.toArray();
