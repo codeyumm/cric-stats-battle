@@ -9,6 +9,10 @@ const path = require('path');
 // create an express app
 const app = express();
 
+// to allow request from any system
+const cors = require('cors');
+app.use(cors());
+
 // set port for the server
 const port = process.env.PORT || "8888";
 
